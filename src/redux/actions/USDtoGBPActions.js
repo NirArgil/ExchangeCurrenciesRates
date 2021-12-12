@@ -1,10 +1,10 @@
-import { GET_USDtoGBP, GET_USDtoGBP_Error } from '../types'
+import { GET_USDtoGBP, GET_USDtoGBP_Error, SET_END_DATE_USDtoGBP, SET_START_DATE_USDtoGBP } from '../types'
 import axios from 'axios'
 
-export const getUSDtoGBP = () => async dispatch => {
+export const getUSDtoGBP = (START, END) => async dispatch => {
 
     try {
-        const response = await axios.get('https://freecurrencyapi.net/api/v2/historical?apikey=36102830-5814-11ec-960d-23b34454283e&base_currency=USD&date_from=2021-12-01&date_to=2021-12-08')
+        const response = await axios.get(`https://freecurrencyapi.net/api/v2/historical?apikey=36102830-5814-11ec-960d-23b34454283e&base_currency=USD&date_from=${START}&date_to=${END}`)
 
         const array = Object.entries(response.data.data).flat();
 
@@ -31,4 +31,20 @@ export const getUSDtoGBP = () => async dispatch => {
         })
     }
 
+}
+
+export const setStartDate = (startDate) => async dispatch => {
+
+    dispatch({
+        type: SET_START_DATE_USDtoGBP,
+        payload: startDate
+    })
+}
+
+export const setEndDate = (endDate) => async dispatch => {
+
+    dispatch({
+        type: SET_END_DATE_USDtoGBP,
+        payload: endDate
+    })
 }

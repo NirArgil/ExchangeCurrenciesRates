@@ -11,10 +11,18 @@
   margin: auto;
 }
 
+.chartComponent {
+  margin-bottom: 45px
+}
+
 .chart button {
   margin-top: 50px;
 }
 
 .chart button:hover {
   color: #fff;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  margin-right: 10px;
 }

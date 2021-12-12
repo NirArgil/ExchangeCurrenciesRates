@@ -1,13 +1,11 @@
-import { GET_EUROtoUSD, GET_EUROtoUSD_Error } from '../types'
+import { GET_EUROtoUSD, GET_EUROtoUSD_Error, SET_END_DATE_EUROtoUSD, SET_START_DATE_EUROtoUSD } from '../types'
 import axios from 'axios'
-import { useSelector } from 'react-redux';
 
-export const getEUROtoUSD = () => async dispatch => {
-    // const startDATE = useSelector((state) => (state.Dates.startDate));
-    // console.log(startDATE);
+export const getEUROtoUSD = (START, END) => async dispatch => {
 
     try {
-        const response = await axios.get('https://freecurrencyapi.net/api/v2/historical?apikey=36102830-5814-11ec-960d-23b34454283e&base_currency=EUR&date_from=2021-12-01&date_to=2021-12-08')
+
+        const response = await axios.get(`https://freecurrencyapi.net/api/v2/historical?apikey=36102830-5814-11ec-960d-23b34454283e&base_currency=EUR&date_from=${START}&date_to=${END}`)
 
         const array = Object.entries(response.data.data).flat();
 
@@ -35,4 +33,20 @@ export const getEUROtoUSD = () => async dispatch => {
         })
     }
 
+}
+
+export const setStartDate = (startDate) => async dispatch => {
+
+    dispatch({
+        type: SET_START_DATE_EUROtoUSD,
+        payload: startDate
+    })
+}
+
+export const setEndDate = (endDate) => async dispatch => {
+
+    dispatch({
+        type: SET_END_DATE_EUROtoUSD,
+        payload: endDate
+    })
 }
