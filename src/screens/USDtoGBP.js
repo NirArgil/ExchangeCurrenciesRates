@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link } from "react-router-dom";
 import '../App.css'
 
@@ -47,13 +47,12 @@ export const USDtoGBP = () => {
         ]
     };
 
-    useEffect(() => {
+    const fetch = () => {
         dispatch(getUSDtoGBP(START, END))
-
-    }, [END]);
+    }
 
     return (
-        <div className="chart">
+        <div className="ratesScreen">
             <Chart className="chartComponent" type='line' data={chartData} />
             <Box>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -75,8 +74,12 @@ export const USDtoGBP = () => {
 
                 </LocalizationProvider>
             </Box>
-            <Button variant="outlined" style={{ textTransform: 'none' }}>
+            <Button className="HomeBtn" variant="outlined" style={{ textTransform: 'none' }}>
                 <Link to="/" style={{ textDecoration: 'none' }}>Back to Home</Link>
+            </Button>
+
+            <Button variant="outlined" color="success" onClick={fetch} style={{ textTransform: 'none' }}>
+                Click to Get New Rates
             </Button>
         </div>
     )

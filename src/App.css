@@ -6,21 +6,21 @@
   margin-bottom: 90px;
 }
 
-.chart {
+.ratesScreen {
   width: 900px;
   margin: auto;
 }
 
 .chartComponent {
-  margin-bottom: 45px
+  margin-bottom: 41px
 }
 
-.chart button {
-  margin-top: 50px;
+.ratesScreen button {
+  margin-top: 25px;
 }
 
-.chart button:hover {
-  color: #fff;
+.HomeBtn {
+  margin-right: 90px !important;
 }
 
 .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
