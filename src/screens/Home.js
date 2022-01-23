@@ -7,10 +7,10 @@ import Button from '@mui/material/Button';
 
 export const Home = () => {
     return (
-        <>
+        <div className="homescreen">
             <header className="App-header">
                 <h1>Exchange Currencies Rates</h1>
-                <h3>By Nir</h3>
+                <h4>By Nir Argil</h4>
             </header>
 
             <Stack spacing={2} direction="row" justifyContent="center">
@@ -23,7 +23,7 @@ export const Home = () => {
                     <Link to="USDtoGBP" style={{ textDecoration: 'none' }}>USDtoGBP</Link>
                 </Button>
             </Stack>
-        </>
+        </div>
     )
 }
 

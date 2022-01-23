@@ -1,9 +1,17 @@
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-header {
+.homescreen {
+  background-image: url(./screens/img/a.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.App-header{
   margin-bottom: 90px;
+  padding-top: 50px;
 }
 
 .ratesScreen {

@@ -19,15 +19,16 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 
 export const EUROtoUSD = () => {
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const EUROtoUSDstate = useSelector((state) => ({ ...state.EUROtoUSD }));
-
+    
     const startDATE = EUROtoUSDstate.startDate;
     const endDATE = EUROtoUSDstate.endDate;
 
     const START = moment(startDATE).format('YYYY-MM-DD');
     const END = moment(endDATE).format('YYYY-MM-DD');
+    // const ENDofDATE = START + 7;
 
     const onStartDatesChange = (startDate) => {
         dispatch(setStartDate(startDate))

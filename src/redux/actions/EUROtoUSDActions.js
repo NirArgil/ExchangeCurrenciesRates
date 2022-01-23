@@ -8,7 +8,7 @@ export const getEUROtoUSD = (START, END) => async dispatch => {
         const response = await axios.get(`https://freecurrencyapi.net/api/v2/historical?apikey=36102830-5814-11ec-960d-23b34454283e&base_currency=EUR&date_from=${START}&date_to=${END}`)
 
         const array = Object.entries(response.data.data).flat();
-
+        
         const filteredRatesArray = (array.filter(function (element, index) {
             return (index % 2 === 1);
         }));
@@ -18,7 +18,7 @@ export const getEUROtoUSD = (START, END) => async dispatch => {
         }));
 
         const EUROtoUSD = filteredRatesArray.map(element => element.USD);
-
+// console.log(EUROtoUSD);
 
         dispatch({
             type: GET_EUROtoUSD,

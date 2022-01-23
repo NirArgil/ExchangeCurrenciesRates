@@ -16,7 +16,7 @@ import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import { Button, TextField, Box } from "@mui/material";
 
 export const USDtoGBP = () => {
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const USDtoGBPstate = useSelector((state) => ({ ...state.USDtoGBP }));
 
